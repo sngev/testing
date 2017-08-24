@@ -45,8 +45,7 @@ def draw_boundingBoxes(tile_object, results, threshold):
             ymin = int(round(top_ymin[j] * tile_object.tile_size[0])) + tile_object.tile_offsets[i][0]
             xmax = int(round(top_xmax[j] * tile_object.tile_size[1])) + tile_object.tile_offsets[i][1]
             ymax = int(round(top_ymax[j] * tile_object.tile_size[0])) + tile_object.tile_offsets[i][0]
-            score = top_conf[i]
-            label = int(top_label_indices[i])
+            label = int(top_label_indices[j])
             if label > 0:
                 cv2.rectangle(img,(xmin,ymin),(xmax,ymax),(0,255,0))
     return img
